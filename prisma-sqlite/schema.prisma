@@ -1,0 +1,198 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/sqlite-client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../prisma/dev.db"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String   @default("Admin User")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Profile {
+  id                String   @id @default(uuid())
+  name              String   @default("Aditya Kumar Maurya")
+  title             String   @default("C++ Developer | Full Stack Developer | Problem Solver")
+  shortIntro        String   @default("I build efficient software and modern web applications with a focus on clean code, problem solving, and continuous learning.")
+  biography         String   @default("I am a passionate software developer with a strong interest in C++ programming and full-stack web development. I enjoy solving problems, building efficient applications, and learning new technologies through practical projects.")
+  aboutHeading      String   @default("About Me")
+  aboutSubtitle     String   @default("Computer Science student focused on programming, web development, and continuous learning.")
+  email             String   @default("aditya@example.com")
+  phone             String   @default("")
+  location          String   @default("Punjab, India")
+  avatarUrl         String   @default("/uploads/profile-avatar.jpg")
+  yearsExperience   Int      @default(0)
+  projectsCompleted Int      @default(2)
+  techMastered      Int      @default(8)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Hero {
+  id               String   @id @default(uuid())
+  badgeText        String   @default("Open to work & opportunities")
+  title            String   @default("Aditya Kumar Maurya")
+  subtitle         String   @default("C++ Developer | Full Stack Developer | Problem Solver")
+  description      String   @default("I build efficient software and modern web applications with a focus on clean code, problem solving, and continuous learning.")
+  ctaPrimaryText   String   @default("Explore My Work")
+  ctaPrimaryUrl    String   @default("#projects")
+  ctaSecondaryText String   @default("Get In Touch")
+  ctaSecondaryUrl  String   @default("#contact")
+  availability     String   @default("Open to opportunities")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Skill {
+  id           String   @id @default(uuid())
+  name         String
+  category     String
+  proficiency  Int      @default(80)
+  icon         String   @default("Code")
+  description  String   @default("")
+  displayOrder Int      @default(0)
+  isFeatured   Boolean  @default(true)
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Project {
+  id               String   @id @default(uuid())
+  title            String
+  shortDescription String
+  description      String
+  technologies     String
+  githubUrl        String   @default("")
+  liveUrl          String   @default("")
+  imageUrl         String   @default("/uploads/project-placeholder.jpg")
+  isFeatured       Boolean  @default(true)
+  isActive         Boolean  @default(true)
+  displayOrder     Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Experience {
+  id               String   @id @default(uuid())
+  company          String
+  position         String
+  location         String   @default("")
+  startDate        String
+  endDate          String   @default("")
+  current          Boolean  @default(false)
+  description      String
+  responsibilities String
+  technologies     String   @default("")
+  logoUrl          String   @default("")
+  displayOrder     Int      @default(0)
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Education {
+  id           String   @id @default(uuid())
+  institution  String
+  degree       String
+  field        String
+  startDate    String
+  endDate      String
+  current      Boolean  @default(false)
+  gpa          String   @default("")
+  description  String   @default("")
+  logoUrl      String   @default("")
+  displayOrder Int      @default(0)
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Achievement {
+  id             String   @id @default(uuid())
+  title          String
+  organization   String
+  date           String
+  description    String
+  certificateUrl String   @default("")
+  credentialId   String   @default("")
+  credentialUrl  String   @default("")
+  displayOrder   Int      @default(0)
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Service {
+  id           String   @id @default(uuid())
+  title        String
+  description  String
+  icon         String   @default("Code2")
+  features     String
+  displayOrder Int      @default(0)
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Resume {
+  id        String   @id @default(uuid())
+  title     String   @default("Aditya Kumar Maurya – Web Developer Resume")
+  fileUrl   String   @default("/uploads/Aditya_Kumar_Resume.pdf")
+  fileName  String   @default("Aditya_Kumar_Resume.pdf")
+  fileSize  String   @default("1.2 MB")
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSettings {
+  id                   String   @id @default(uuid())
+  siteName             String   @default("Aditya Kumar Maurya")
+  seoTitle             String   @default("Aditya Kumar Maurya - C++ & Full Stack Developer")
+  seoDescription       String   @default("Portfolio of Aditya Kumar Maurya, C++ Developer, Full Stack Developer, and Problem Solver.")
+  seoKeywords          String   @default("C++ Developer, Full Stack Developer, React, JavaScript, Firebase, Next.js")
+  primaryAccent        String   @default("#00f3ff")
+  secondaryAccent      String   @default("#8b5cf6")
+  contactEmail         String   @default("aditya@example.com")
+  githubUrl            String   @default("https://github.com")
+  linkedinUrl          String   @default("https://linkedin.com")
+  twitterUrl           String   @default("")
+  footerName           String   @default("Aditya Kumar Maurya")
+  footerDescription    String   @default("C++ Developer | Full Stack Developer | Problem Solver")
+  footerText           String   @default("© 2026 Aditya Kumar. All rights reserved.")
+  skillsHeading        String   @default("Skills & Technologies")
+  skillsSubtitle       String   @default("Technologies and tools I use to build practical web applications and solve programming problems.")
+  projectsHeading      String   @default("My Projects")
+  projectsSubtitle     String   @default("A collection of web applications and practical projects built using modern technologies.")
+  experienceHeading    String   @default("Experience & Contributions")
+  experienceSubtitle   String   @default("My open-source contributions, community projects, and practical development experience.")
+  educationHeading     String   @default("Education")
+  educationSubtitle    String   @default("B.Tech in Computer Science and Engineering at Lovely Professional University.")
+  achievementsHeading  String   @default("Achievements & Certifications")
+  achievementsSubtitle String   @default("A record of my open-source contributions, community participation, and certifications.")
+  servicesHeading      String   @default("Services")
+  servicesSubtitle     String   @default("Web development services focused on building responsive, functional, and user-friendly applications.")
+  resumeHeading        String   @default("Resume")
+  resumeSubtitle       String   @default("View or download my latest resume for more details about my education, skills, projects, and experience.")
+  contactHeading       String   @default("Get In Touch")
+  contactSubtitle      String   @default("Have a question, project idea, or opportunity? Feel free to reach out.")
+  updatedAt            DateTime @updatedAt
+}
