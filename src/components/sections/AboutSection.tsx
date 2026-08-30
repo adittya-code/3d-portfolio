@@ -32,7 +32,7 @@ export default function AboutSection({ data }: AboutSectionProps) {
   const avatarUrl = data?.avatarUrl || '/uploads/profile-avatar.jpg';
 
   const stats = [
-    { icon: Award, label: 'Years Experience', value: `${data?.yearsExperience ?? 0}+` },
+    { icon: Award, label: 'Years Experience', value: `${data?.yearsExperience ?? 1}+` },
     { icon: Code, label: 'Completed Projects', value: `${data?.projectsCompleted ?? 2}+` },
     { icon: Cpu, label: 'Technologies', value: `${data?.techMastered ?? 8}+` },
     { icon: ShieldCheck, label: 'Code Quality', value: '100%' },
