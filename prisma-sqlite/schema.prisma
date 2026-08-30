@@ -29,7 +29,7 @@ model Profile {
   phone             String   @default("")
   location          String   @default("Punjab, India")
   avatarUrl         String   @default("/uploads/img.webp")
-  yearsExperience   Int      @default(0)
+  yearsExperience   Int      @default(1)
   projectsCompleted Int      @default(2)
   techMastered      Int      @default(8)
   createdAt         DateTime @default(now())

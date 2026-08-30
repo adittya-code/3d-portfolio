@@ -41,7 +41,7 @@ export default function HeroSection({ data, profileData, siteSettings }: HeroSec
   const ctaSecondaryText = data?.ctaSecondaryText || 'Get In Touch';
   const ctaSecondaryUrl = data?.ctaSecondaryUrl || '#contact';
 
-  const yearsExp = profileData?.yearsExperience ?? 0;
+  const yearsExp = profileData?.yearsExperience ?? 1;
   const projectsDone = profileData?.projectsCompleted ?? 2;
   const techMastered = profileData?.techMastered ?? 8;
 

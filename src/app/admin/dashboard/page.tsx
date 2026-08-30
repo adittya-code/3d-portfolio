@@ -441,7 +441,7 @@ export default function AdminDashboardPage() {
                   <label className="block text-xs font-mono text-slate-400 mb-1">Years Experience</label>
                   <input
                     type="number"
-                    value={profile.yearsExperience || 0}
+                    value={profile.yearsExperience || 1}
                     onChange={(e) => setProfile({ ...profile, yearsExperience: e.target.value })}
                     className="w-full bg-dark-950 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white"
                   />
