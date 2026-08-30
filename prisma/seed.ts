@@ -52,7 +52,7 @@ async function main() {
       email: 'aditya@example.com',
       phone: '',
       location: 'Punjab, India',
-      avatarUrl: '/uploads/profile-avatar.jpg',
+      avatarUrl: '/uploads/img.webp',
       yearsExperience: 0,
       projectsCompleted: 2,
       techMastered: 8,

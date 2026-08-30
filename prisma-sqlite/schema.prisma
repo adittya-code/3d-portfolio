@@ -28,7 +28,7 @@ model Profile {
   email             String   @default("aditya@example.com")
   phone             String   @default("")
   location          String   @default("Punjab, India")
-  avatarUrl         String   @default("/uploads/profile-avatar.jpg")
+  avatarUrl         String   @default("/uploads/img.webp")
   yearsExperience   Int      @default(0)
   projectsCompleted Int      @default(2)
   techMastered      Int      @default(8)
