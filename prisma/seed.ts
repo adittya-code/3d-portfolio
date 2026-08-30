@@ -53,7 +53,7 @@ async function main() {
       phone: '',
       location: 'Punjab, India',
       avatarUrl: '/uploads/img.webp',
-      yearsExperience: 0,
+      
       projectsCompleted: 2,
       techMastered: 8,
     },

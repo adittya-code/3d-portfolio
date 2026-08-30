@@ -43,7 +43,7 @@ export async function PUT(request: NextRequest) {
           phone: data.phone,
           location: data.location,
           avatarUrl: data.avatarUrl,
-          yearsExperience: Number(data.yearsExperience) || 0,
+          
           projectsCompleted: Number(data.projectsCompleted) || 0,
           techMastered: Number(data.techMastered) || 0,
         },
